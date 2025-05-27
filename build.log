@@ -1,0 +1,186 @@
+time="2025-05-26T17:34:13-03:00" level=warning msg="C:\\Users\\lelec\\agentic-rag\\docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [api internal] load build definition from Dockerfile
+#1 transferring dockerfile: 745B done
+#1 DONE 0.0s
+
+#2 [api internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+#2 DONE 0.8s
+
+#3 [api internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.1s
+
+#4 [api internal] load build context
+#4 DONE 0.0s
+
+#5 [api 1/9] FROM docker.io/library/python:3.12-slim-bookworm@sha256:fd95fa221297a88e1cf49c55ec1828edd7c5a428187e67b5d1805692d11588db
+#5 resolve docker.io/library/python:3.12-slim-bookworm@sha256:fd95fa221297a88e1cf49c55ec1828edd7c5a428187e67b5d1805692d11588db 0.1s done
+#5 CACHED
+
+#6 [api 2/9] RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
+#6 ...
+
+#7 [api 3/9] ADD https://astral.sh/uv/install.sh /uv-installer.sh
+#7 DONE 1.0s
+
+#7 [api 3/9] ADD https://astral.sh/uv/install.sh /uv-installer.sh
+#7 CACHED
+
+#4 [api internal] load build context
+#4 transferring context: 992B 0.0s done
+#4 DONE 0.0s
+
+#6 [api 2/9] RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
+#6 1.004 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#6 1.081 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#6 1.112 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+#6 1.154 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8793 kB]
+#6 2.071 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [512 B]
+#6 2.088 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [261 kB]
+#6 3.059 Fetched 9309 kB in 2s (4412 kB/s)
+#6 3.059 Reading package lists...
+#6 4.192 Reading package lists...
+#6 5.440 Building dependency tree...
+#6 5.514 Reading state information...
+#6 5.592 ca-certificates is already the newest version (20230311).
+#6 5.592 The following additional packages will be installed:
+#6 5.592   libbrotli1 libcurl4 libldap-2.5-0 libnghttp2-14 libpsl5 librtmp1 libsasl2-2
+#6 5.592   libsasl2-modules-db libssh2-1
+#6 5.593 Recommended packages:
+#6 5.593   libldap-common publicsuffix libsasl2-modules
+#6 5.883 The following NEW packages will be installed:
+#6 5.884   curl libbrotli1 libcurl4 libldap-2.5-0 libnghttp2-14 libpsl5 librtmp1
+#6 5.884   libsasl2-2 libsasl2-modules-db libssh2-1
+#6 5.963 0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
+#6 5.963 Need to get 1617 kB of archives.
+#6 5.963 After this operation, 3817 kB of additional disk space will be used.
+#6 5.963 Get:1 http://deb.debian.org/debian bookworm/main amd64 libbrotli1 amd64 1.0.9-2+b6 [275 kB]
+#6 6.034 Get:2 http://deb.debian.org/debian bookworm/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg-10 [20.3 kB]
+#6 6.038 Get:3 http://deb.debian.org/debian bookworm/main amd64 libsasl2-2 amd64 2.1.28+dfsg-10 [59.7 kB]
+#6 6.039 Get:4 http://deb.debian.org/debian bookworm/main amd64 libldap-2.5-0 amd64 2.5.13+dfsg-5 [183 kB]
+#6 6.054 Get:5 http://deb.debian.org/debian bookworm/main amd64 libnghttp2-14 amd64 1.52.0-1+deb12u2 [73.0 kB]
+#6 6.058 Get:6 http://deb.debian.org/debian bookworm/main amd64 libpsl5 amd64 0.21.2-1 [58.7 kB]
+#6 6.061 Get:7 http://deb.debian.org/debian bookworm/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-2+b2 [60.8 kB]
+#6 6.069 Get:8 http://deb.debian.org/debian bookworm/main amd64 libssh2-1 amd64 1.10.0-3+b1 [179 kB]
+#6 6.143 Get:9 http://deb.debian.org/debian bookworm/main amd64 libcurl4 amd64 7.88.1-10+deb12u12 [391 kB]
+#6 6.165 Get:10 http://deb.debian.org/debian bookworm/main amd64 curl amd64 7.88.1-10+deb12u12 [315 kB]
+#6 6.405 debconf: delaying package configuration, since apt-utils is not installed
+#6 6.427 Fetched 1617 kB in 0s (5494 kB/s)
+#6 6.451 Selecting previously unselected package libbrotli1:amd64.
+#6 6.451 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6686 files and directories currently installed.)
+#6 6.459 Preparing to unpack .../0-libbrotli1_1.0.9-2+b6_amd64.deb ...
+#6 6.468 Unpacking libbrotli1:amd64 (1.0.9-2+b6) ...
+#6 6.515 Selecting previously unselected package libsasl2-modules-db:amd64.
+#6 6.516 Preparing to unpack .../1-libsasl2-modules-db_2.1.28+dfsg-10_amd64.deb ...
+#6 6.521 Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#6 6.556 Selecting previously unselected package libsasl2-2:amd64.
+#6 6.557 Preparing to unpack .../2-libsasl2-2_2.1.28+dfsg-10_amd64.deb ...
+#6 6.562 Unpacking libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#6 6.602 Selecting previously unselected package libldap-2.5-0:amd64.
+#6 6.603 Preparing to unpack .../3-libldap-2.5-0_2.5.13+dfsg-5_amd64.deb ...
+#6 6.607 Unpacking libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#6 6.653 Selecting previously unselected package libnghttp2-14:amd64.
+#6 6.654 Preparing to unpack .../4-libnghttp2-14_1.52.0-1+deb12u2_amd64.deb ...
+#6 6.659 Unpacking libnghttp2-14:amd64 (1.52.0-1+deb12u2) ...
+#6 6.701 Selecting previously unselected package libpsl5:amd64.
+#6 6.702 Preparing to unpack .../5-libpsl5_0.21.2-1_amd64.deb ...
+#6 6.706 Unpacking libpsl5:amd64 (0.21.2-1) ...
+#6 6.748 Selecting previously unselected package librtmp1:amd64.
+#6 6.749 Preparing to unpack .../6-librtmp1_2.4+20151223.gitfa8646d.1-2+b2_amd64.deb ...
+#6 6.754 Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#6 6.792 Selecting previously unselected package libssh2-1:amd64.
+#6 6.793 Preparing to unpack .../7-libssh2-1_1.10.0-3+b1_amd64.deb ...
+#6 6.797 Unpacking libssh2-1:amd64 (1.10.0-3+b1) ...
+#6 6.846 Selecting previously unselected package libcurl4:amd64.
+#6 6.847 Preparing to unpack .../8-libcurl4_7.88.1-10+deb12u12_amd64.deb ...
+#6 6.852 Unpacking libcurl4:amd64 (7.88.1-10+deb12u12) ...
+#6 6.899 Selecting previously unselected package curl.
+#6 6.900 Preparing to unpack .../9-curl_7.88.1-10+deb12u12_amd64.deb ...
+#6 6.905 Unpacking curl (7.88.1-10+deb12u12) ...
+#6 6.959 Setting up libpsl5:amd64 (0.21.2-1) ...
+#6 6.973 Setting up libbrotli1:amd64 (1.0.9-2+b6) ...
+#6 6.986 Setting up libnghttp2-14:amd64 (1.52.0-1+deb12u2) ...
+#6 6.999 Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg-10) ...
+#6 7.012 Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-2+b2) ...
+#6 7.027 Setting up libsasl2-2:amd64 (2.1.28+dfsg-10) ...
+#6 7.042 Setting up libssh2-1:amd64 (1.10.0-3+b1) ...
+#6 7.056 Setting up libldap-2.5-0:amd64 (2.5.13+dfsg-5) ...
+#6 7.071 Setting up libcurl4:amd64 (7.88.1-10+deb12u12) ...
+#6 7.084 Setting up curl (7.88.1-10+deb12u12) ...
+#6 7.096 Processing triggers for libc-bin (2.36-9+deb12u10) ...
+#6 DONE 7.1s
+
+#8 [api 3/9] ADD https://astral.sh/uv/install.sh /uv-installer.sh
+#8 DONE 0.0s
+
+#9 [api 4/9] RUN sh /uv-installer.sh && rm /uv-installer.sh
+#9 0.382 downloading uv 0.7.8 x86_64-unknown-linux-gnu
+#9 1.670 no checksums to verify
+#9 2.667 installing to /root/.local/bin
+#9 2.672   uv
+#9 2.673   uvx
+#9 2.673 everything's installed!
+#9 2.689 
+#9 2.689 To add $HOME/.local/bin to your PATH, either restart your shell or run:
+#9 2.689 
+#9 2.689     source $HOME/.local/bin/env (sh, bash, zsh)
+#9 2.689     source $HOME/.local/bin/env.fish (fish)
+#9 DONE 2.7s
+
+#10 [api 5/9] ADD . /app
+#10 DONE 0.1s
+
+#11 [api 6/9] WORKDIR /app
+#11 DONE 0.1s
+
+#12 [api 7/9] RUN uv sync --locked
+#12 0.588 Using CPython 3.12.10 interpreter at: /usr/local/bin/python3.12
+#12 0.588 Creating virtual environment at: .venv
+#12 0.606 Resolved 16 packages in 1ms
+#12 0.797 Downloading pydantic-core (1.9MiB)
+#12 0.939  Downloading pydantic-core
+#12 0.955 Prepared 14 packages in 344ms
+#12 1.155 Installed 14 packages in 199ms
+#12 1.155  + annotated-types==0.7.0
+#12 1.155  + anyio==4.9.0
+#12 1.155  + click==8.2.1
+#12 1.155  + fastapi==0.115.12
+#12 1.155  + h11==0.16.0
+#12 1.155  + idna==3.10
+#12 1.155  + pydantic==2.11.5
+#12 1.155  + pydantic-core==2.33.2
+#12 1.155  + python-multipart==0.0.20
+#12 1.155  + sniffio==1.3.1
+#12 1.155  + starlette==0.46.2
+#12 1.155  + typing-extensions==4.13.2
+#12 1.155  + typing-inspection==0.4.1
+#12 1.155  + uvicorn==0.34.2
+#12 DONE 5.7s
+
+#13 [api 8/9] RUN echo "--- Python sys.path AFTER venv activation ---" && python -c "import sys; print(sys.path)"
+#13 0.903 --- Python sys.path AFTER venv activation ---
+#13 0.925 ['', '/usr/local/lib/python312.zip', '/usr/local/lib/python3.12', '/usr/local/lib/python3.12/lib-dynload', '/app/.venv/lib/python3.12/site-packages']
+#13 DONE 1.0s
+
+#14 [api 9/9] RUN echo "--- Checking for fastapi AFTER venv activation ---" && python -c "import fastapi; print('FastAPI is installed!')" || echo 'FastAPI is NOT installed after venv activation!'
+#14 0.770 --- Checking for fastapi AFTER venv activation ---
+#14 1.790 FastAPI is installed!
+#14 DONE 1.8s
+
+#15 [api] exporting to image
+#15 exporting layers
+#15 exporting layers 1.8s done
+#15 exporting manifest sha256:a1b93aedca3cd8529ba2a7d3ec114622ebd8e0abdb8f8c123db8b56309b9254f 0.0s done
+#15 exporting config sha256:328b0c786e49697962c35bcf1fce0a08e1ba0ed5c78f164caee2a3d63c744456 0.0s done
+#15 exporting attestation manifest sha256:a52ae0ac5624b9ac3299544ef780763288c9f9099f106d85127a6e4087ed8a1b 0.0s done
+#15 exporting manifest list sha256:6724fe91cc122745ecec60ceda5aa6a5b14131e790fbadfcacd24cb5e3c96de1 0.0s done
+#15 naming to docker.io/library/agentic-rag-api:latest done
+#15 unpacking to docker.io/library/agentic-rag-api:latest
+#15 unpacking to docker.io/library/agentic-rag-api:latest 0.9s done
+#15 DONE 2.7s
+
+#16 [api] resolving provenance for metadata file
+#16 DONE 0.0s
+ api  Built

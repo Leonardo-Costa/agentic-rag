@@ -1,0 +1,19 @@
+[project]
+name = "agentic-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "colorlog>=6.9.0",
+    "fastapi>=0.115.12",
+    "langchain-community>=0.3.24",
+    "langchain-core>=0.3.61",
+    "langchain-openai>=0.3.18",
+    "langchain-postgres>=0.0.13",
+    "psycopg[binary,pool]>=3.2.9",
+    "py-zerox>=0.0.7",
+    "pypdf2>=3.0.1",
+    "python-multipart>=0.0.20",
+    "uvicorn>=0.34.2",
+]
