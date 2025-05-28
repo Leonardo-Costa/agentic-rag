@@ -1,11 +1,21 @@
+from typing import List
 from pydantic import BaseModel
-from langchain_core.documents import Document
 
 class QuestionRequest(BaseModel):
     question: str
 
+class Chunk(BaseModel):
+    file_name: str
+    page_number: int
+    content: str
+
 class AnswerResponse(BaseModel):
     answer: str
+    chunks: List[Chunk]
+
+class AddDocumentResponse(BaseModel):
+    message: str
+    documents_indexed: int
 
 class DocumentUploadResponse(BaseModel):
     message: str

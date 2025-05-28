@@ -1,5 +1,6 @@
 import logging
 import colorlog
+import os
 from fastapi import FastAPI
 from agentic_rag.api import question, documents, embedding
 
@@ -19,13 +20,16 @@ def init_logger():
     handler = colorlog.StreamHandler()
     handler.setFormatter(formatter)
 
-    logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
-    logger.addHandler(handler)
+    log_level_str = os.getenv("LOG_LEVEL", "DEBUG").upper()
+    app_log_level = getattr(logging, log_level_str, logging.DEBUG)
+    app_logger = logging.getLogger("agentic_rag")
+    app_logger.setLevel(app_log_level)
+    app_logger.addHandler(handler)
+    app_logger.propagate = False
 
     logging.getLogger("uvicorn").setLevel(logging.WARNING)
 
-    logging.info("Logger initialized successfully")
+    app_logger.info("Logger initialized successfully")
 
 init_logger()
 

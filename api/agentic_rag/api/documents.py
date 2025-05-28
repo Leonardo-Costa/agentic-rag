@@ -20,11 +20,10 @@ def get_file_parsing_service() -> DocumentProcessingService:
 
 @router.post("/documents", response_model=DocumentUploadResponse)
 async def upload_documents(files: List[UploadFile] = File(...), service: DocumentProcessingService = Depends(get_file_parsing_service)):
-
-    await service.process_uploaded_documents(files)
+    response = await service.process_uploaded_documents(files)
 
     return DocumentUploadResponse(
-        message="Documents processed successfully",
-        documents_indexed=len(files),
-        total_chunks=0
+        message=response.message,
+        documents_indexed=response.documents_indexed,
+        total_chunks=response.total_chunks
     )

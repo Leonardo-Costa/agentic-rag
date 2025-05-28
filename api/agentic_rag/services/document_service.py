@@ -60,10 +60,12 @@ class DocumentProcessingService:
                     
                     logger.info("OCR processing completed for file: %s", file.filename)
 
-                    self.embedding_service.add_documents(processed_documents)
+                    number_of_chunks = self.embedding_service.add_documents(processed_documents)
+
 
                     logger.info("Documents added to embedding service for file: %s", file.filename)
 
+                    total_chunks += number_of_chunks
                     documents_indexed += 1
                     
             except HTTPException as e:
