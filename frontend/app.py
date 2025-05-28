@@ -1,8 +1,8 @@
 import streamlit as st
 import requests
 
-# Backend API URL (use service-name for Docker Compose networking)
-API_URL = "http://api:8001"
+# Backend API URL (use host.docker.internal for Docker networking)
+API_URL = "http://host.docker.internal:8001"
 
 st.title("Agentic RAG Frontend")
 
@@ -14,7 +14,10 @@ if uploaded_file is not None:
         try:
             response = requests.post(f"{API_URL}/documents", files=files)
             if response.status_code == 200:
+                data = response.json()
                 st.success("File uploaded successfully!")
+                st.subheader("Upload Response")
+                st.json(data)
             else:
                 st.error(f"Upload failed: [{response.status_code}] {response.text}")
         except Exception as e:
@@ -25,9 +28,18 @@ question = st.text_input("Enter your question:")
 if st.button("Query") and question:
     with st.spinner("Querying..."):
         try:
-            response = requests.post(f"{API_URL}/query", json={"question": question})
+            response = requests.post(f"{API_URL}/question", json={"question": question})
             if response.status_code == 200:
-                st.write(response.json())
+                data = response.json()
+                st.subheader("Query Response")
+                st.json(data)
+                st.subheader("Answer")
+                st.markdown(f"> {data.get('answer', '')}")
+                st.subheader("Source Chunks")
+                for chunk in data.get("chunks", []):
+                    title = f"{chunk.get('file_name', '')} - Page {chunk.get('page_number', '')}"
+                    with st.expander(title):
+                        st.write(chunk.get("content", ""))
             else:
                 st.error(f"Query failed: [{response.status_code}] {response.text}")
         except Exception as e:
