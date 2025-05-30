@@ -23,7 +23,7 @@ async def upload_documents(files: List[UploadFile] = File(...), service: Documen
     response = await service.process_uploaded_documents(files)
 
     return DocumentUploadResponse(
-        message=response.message,
-        documents_indexed=response.documents_indexed,
-        total_chunks=response.total_chunks
+        message=response['message'],
+        documents_indexed=response['documents_indexed'],
+        total_chunks=response['total_chunks']
     )

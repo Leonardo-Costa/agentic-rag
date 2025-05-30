@@ -1,4 +1,6 @@
-# agentic-rag
+# Rag
+
+## Video: https://www.loom.com/share/5049af220efa443fb8d671c2ecf177ba?sid=ff79778e-c99f-4950-8ae6-80cc730c836b
 
 A FastAPI-based retrieval-augmented generation (RAG) service for PDF documents. It leverages OpenAI embeddings, PGVector (PostgreSQL vector extension), and pyzerox for OCR to provide semantic search and Q&A capabilities over uploaded documents.
 
